@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap');
+
+html{
+  font-size:16px;
+  @media (max-width: 576px){
+    font-size:12px;
+  }
+  @media (min-width:577px) and (max-width:991px){
+    font-size:14px;
+  }
+}
+body {
+  min-height:100vh;
+  margin: 0;
+  font-family: "Gowun Batang", serif !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,li,img{
+  margin:0;
+  padding:0;
+}
+
+li{
+  list-style:none;
+}
+
+a, img{
+  color:inherit !important; 
+  text-decoration: none !important;
+  display:block;
+}
+
+button{
+  margin:0;
+  padding:0;
+  font-family:inherit;
+  background:transparent;
+  border:none;
+}
