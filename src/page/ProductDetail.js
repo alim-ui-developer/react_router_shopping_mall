@@ -14,15 +14,15 @@ const ProductDetail = () => {
   // const [ product, setProduct ] = useState(null);
   const dispatch = useDispatch();
   
-  const getProductDetail = async () => {
-    setIsLoading(true);
-    dispatch(productAction.getProductDetail(id));
-    setIsLoading(false);
-  }
-  
   useEffect(() => {
+    const getProductDetail = async () => {
+      setIsLoading(true);
+      dispatch(productAction.getProductDetail(id));
+      setIsLoading(false);
+    }
+    
     getProductDetail();
-  },[])
+  },[dispatch, id])
 
   return (
     <>

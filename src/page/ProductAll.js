@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect }  from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,20 +14,20 @@ const ProductAll = (authenticate) => {
   const productList = useSelector((state) => state.product.productList);
   const [ query, setQuery ] = useSearchParams();
   const dispatch = useDispatch();
-
-  const getProducts = () => {
-    let searchQuery = query.get('q');
-    if(searchQuery === null){
-      searchQuery = '';
-    }
-    setIsLoading(true);
-    dispatch(productAction.getProducts(searchQuery))
-    setIsLoading(false);
-  };
   
   useEffect(() => {
+    const getProducts = () => {
+      let searchQuery = query.get('q');
+      if(searchQuery === null){
+        searchQuery = '';
+      }
+      setIsLoading(true);
+      dispatch(productAction.getProducts(searchQuery))
+      setIsLoading(false);
+    };
+    
     getProducts();
-  },[query]);
+  },[dispatch, query]);
 
   return (
     <Container className='procutAllWrap'>
